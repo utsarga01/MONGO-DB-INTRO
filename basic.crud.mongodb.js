@@ -85,4 +85,19 @@ use("kec-crud");
 //     upsert: true,
 //   }
 // );
+//db.student.find();
+
+db.student.updateOne(
+  {
+    name: "Saugat",
+  },
+  {
+    $set: {
+      address: "Imadole",
+    },
+  },
+  {
+    upsert: true,
+  }
+);
 db.student.find();
