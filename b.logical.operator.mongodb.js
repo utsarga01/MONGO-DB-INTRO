@@ -7,7 +7,7 @@ use("kec-crud");
 // ?find movies whose genre is "Action" and greater than 7
 
 // db.movies.find({
-//   $and: [{ genres: "Action" }, { "rating.average": { $gt: 7 } }],
+//   $and: [{ genres: "Action" },{ "rating.average": { $gt: 7 } }],
 // });
 
 // equivalent code
