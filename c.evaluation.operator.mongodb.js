@@ -14,11 +14,12 @@ use("kec-crud");
 // ]);
 // db.employee.find();
 // ? find employees whose expense is greater than their income
-// ?find employees whose income is less than 80
-db.employee.find({
-  $expr: { $gt: ["$expense", "$income"] },
-});
+// ?find employees whose income is less than 850
+// db.employee.find({
+//   $expr: { $gt: ["$expense", "$income"] },
+// });
 
 // db.employee.find({
 //   income: { $lt: 850 },
 // });
+db.employee.find({ expr: { $gt: ["$income", 850] } });
