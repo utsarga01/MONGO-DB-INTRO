@@ -127,3 +127,8 @@ use("kec-crud");
 // db.scores.find({
 //   scores: { $elemMatch: { $gt: 80, $lt: 85 } },
 // });
+
+
+// db.movies.find({
+//   "rating.average": { $in: [6, 6.5, 9, 8, 8.5, 8.6, 7.7, 6.1, 7.8] },
+// });

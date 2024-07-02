@@ -22,4 +22,4 @@ use("kec-crud");
 // db.employee.find({
 //   income: { $lt: 850 },
 // });
-db.employee.find({ expr: { $gt: ["$income", 850] } });
+//db.employee.find({ expr: { $gt: ["$income", 850] } });
