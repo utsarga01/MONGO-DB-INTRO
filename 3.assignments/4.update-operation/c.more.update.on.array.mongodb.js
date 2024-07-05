@@ -75,16 +75,16 @@ use("kec-crud");
 
 // ? decrease each marks which are less than 90 by 10 marks for "Smarika"
 
-db.scores.updateOne(
-  { name: "Smarika" },
-  {
-    $inc: {
-      "marks.$[element]": -10,
-    },
-  },
-  {
-    arrayFilters: [{ element: { $gt: 80 } }],
-  }
-);
+// db.scores.updateOne(
+//   { name: "Smarika" },
+//   {
+//     $inc: {
+//       "marks.$[element]": -10,
+//     },
+//   },
+//   {
+//     arrayFilters: [{ element: { $gt: 80 } }],
+//   }
+// );
 
-db.scores.find();
+// db.scores.find();
