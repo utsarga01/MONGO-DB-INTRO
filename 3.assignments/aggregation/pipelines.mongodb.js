@@ -15,6 +15,14 @@ use("kec-crud");
 
 // db.movies.aggregate([
 //   {
+//     $match:{
+//       name:"Glee",
+//     },
+//   },
+// ]);
+
+// db.movies.aggregate([
+//   {
 //     $match: {
 //       genres: "Action",
 //       "rating.average": { $gt: 9 },
@@ -29,6 +37,21 @@ use("kec-crud");
 //     },
 //   },
 // ]);
+// db.movies.aggregate([
+//   {
+//     $match: {
+//       genres: "Action",
+//       "rating.average": { $gt: 9 },
+//     },
+//   },
+//   {
+//     $project: {
+//       _id: 0,
+//       name: 1,
+//       genres: 1,
+//     },
+//   },
+]);
 
 // db.movies.find();
 
@@ -42,10 +65,28 @@ use("kec-crud");
 //     $project: {
 //       name: 1,
 //       genres: 1,
-//       networkCountry: "$network.country.name",
+//       networkCountry: "$network.country.name",//network country vanne variable banako ani $ le tyo name field lai janauxa
 //     },
 //   },
 // ]);
+db.movies.aggregate([
+  {
+    $match:{
+
+      $or:[{genres:"crime"},{"network.country.name":"United States"}]
+    },
+  },
+  {
+    $project:{
+       name:1,
+      genres:1,
+
+
+    },
+  },
+
+  
+]); 
 
 // find movies whose genre includes both "Drama" and "Comedy"
 // ? project "name" and genre field
@@ -144,20 +185,20 @@ use("kec-crud");
 
 // ? find movies whose rating is greater than 8 and id is sorted in ascending order
 
-db.movies.aggregate([
-  {
-    $match: {
-      "rating.average": { $gt: 8 },
-    },
-  },
-  {
-    $sort: {
-      id: 1,
-    },
-  },
-  {
-    $project: {
-      name: 1,
-    },
-  },
-]);
+// db.movies.aggregate([
+//   {
+//     $match: {
+//       "rating.average": { $gt: 8 },
+//     },
+//   },
+//   {
+//     $sort: {
+//       id: 1,
+//     },
+//   },
+//   {
+//     $project: {
+//       name: 1,
+//     },
+//   },
+// ]);
