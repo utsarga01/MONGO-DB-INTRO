@@ -69,24 +69,24 @@ use("kec-crud");
 //     },
 //   },
 // ]);
-db.movies.aggregate([
-  {
-    $match:{
+// db.movies.aggregate([
+//   {
+//     $match:{
 
-      $or:[{genres:"crime"},{"network.country.name":"United States"}]
-    },
-  },
-  {
-    $project:{
-       name:1,
-      genres:1,
+//       $or:[{genres:"crime"},{"network.country.name":"United States"}]
+//     },
+//   },
+//   {
+//     $project:{
+//        name:1,
+//       genres:1,
 
 
-    },
-  },
+//     },
+//   },
 
   
-]); 
+// ]); 
 
 // find movies whose genre includes both "Drama" and "Comedy"
 // ? project "name" and genre field

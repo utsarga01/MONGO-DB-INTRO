@@ -112,6 +112,16 @@ use("kec-crud");
 //     },
 //   }
 // );
+db.scores.updateOne(
+  {
+    name: "Suyasha",
+  },
+  {
+    $mul: {
+      age: 2,
+    },
+  }
+);
 // db.scores.find();
 
 // ? $rename => renames field

@@ -41,6 +41,16 @@ use("kec-crud");
 //     },
 //   }
 // );
+db.scores.updateOne(
+  {
+    name: "Smarika",
+  },
+  {
+    $pull: {
+      scores: { $lt: 50 },
+    },
+  }
+);
 // db.scores.find();
 
 // db.scores.updateOne(
