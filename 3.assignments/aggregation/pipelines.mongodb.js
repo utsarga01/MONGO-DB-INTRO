@@ -51,7 +51,7 @@ use("kec-crud");
 //       genres: 1,
 //     },
 //   },
-]);
+// ]);
 
 // db.movies.find();
 
@@ -81,12 +81,10 @@ use("kec-crud");
 //        name:1,
 //       genres:1,
 
-
 //     },
 //   },
 
-  
-// ]); 
+// ]);
 
 // find movies whose genre includes both "Drama" and "Comedy"
 // ? project "name" and genre field
@@ -199,6 +197,31 @@ use("kec-crud");
 //   {
 //     $project: {
 //       name: 1,
+//     },
+//   },
+// ]);
+// ?used for pagination
+// let page = 1;
+// let limit = 10;
+// let skip = (page - 1) * limit;
+// db.movies.aggregate([
+//   {
+//     $match: {},
+//   },
+//   {
+//     $sort: {
+//       id: 1,
+//     },
+//   },
+//   {
+//     $skip: skip,
+//   },
+//   { $limit: limit },
+//   {
+//     $project: {
+//       _id: 0,
+//       name: 1,
+//       id: 1,
 //     },
 //   },
 // ]);
